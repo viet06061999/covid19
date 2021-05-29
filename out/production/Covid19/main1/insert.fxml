@@ -20,7 +20,7 @@
          <children>
             <TextField fx:id="maMauBenhPham" promptText="Nhập Mã mẫu bệnh phẩm*" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="0.0" />
             <TextField fx:id="hinhThucLayMau" promptText="Nhập Hình thức lấy mẫu*" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="35.0" />
-            <TextField fx:id="maThuTu" layoutX="210.0" layoutY="10.0" promptText="Nhập Mã thứ tự" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="70.0" />
+<!--            <TextField fx:id="maThuTu" layoutX="210.0" layoutY="10.0" promptText="Nhập Mã thứ tự" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="70.0" />-->
             <Label text="Mã mẫu bệnh phẩm*" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <Label layoutX="10.0" layoutY="10.0" text="Hình thức lấy mẫu*" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0" />
             <Label layoutX="20.0" layoutY="20.0" text="Mã thứ tự" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0" />
@@ -52,7 +52,7 @@
             <TextField fx:id="ghiChuNeuCoTruongHopDacBiet" promptText="Nhập Ghi chú (nếu có trường hợp đặc biệt)" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="35.0" />
             <TextField fx:id="phanLoaiNoiLayMau" layoutX="210.0" layoutY="10.0" promptText="Nhập Phân loại nơi lấy mẫu" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="70.0" />
             <Label text="Lần lấy mẫu" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Label text="Ghi chú (nếu có trường hợp đặc biệt)" layoutX="10.0" layoutY="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0" />
+            <Label text="Ghi chú" layoutX="10.0" layoutY="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0" />
             <Label text="Phân loại nơi lấy mẫu" layoutX="20.0" layoutY="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0" />
          </children>
       </AnchorPane>

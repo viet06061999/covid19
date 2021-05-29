@@ -16,7 +16,7 @@ public class AIMSDB {
 
         // SQL statement for creating a new table
         String sql = "CREATE TABLE User (\n" +
-                "stt INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n"+
+                "stt INTEGER PRIMARY KEY AUTOINCREMENT,\n"+
                 "maDonVi VARCHAR(45) ,\n"+
                 "maNgay VARCHAR(45) ,\n" +
                 "maBan VARCHAR(45) ,\n" +

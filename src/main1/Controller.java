@@ -1,7 +1,10 @@
 package main1;
 
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -20,7 +24,6 @@ import main1.dao.user.UserDAO;
 import main1.entity.db.User;
 import main1.utils.ExelUtil;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
@@ -100,6 +103,12 @@ public class Controller implements Initializable {
     @FXML
     TableColumn<User, String> ctValue;
 
+    @FXML
+    TextField timKiemTextField;
+
+    @FXML
+    Button timKiem;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         maDonVi.setCellValueFactory(new PropertyValueFactory<User, String>("maDonVi"));
@@ -107,17 +116,17 @@ public class Controller implements Initializable {
         maBan.setCellValueFactory(new PropertyValueFactory<User, String>("maBan"));
         maMauBenhPham.setCellValueFactory(new PropertyValueFactory<User, String>("maMauBenhPham"));
         hinhThucLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("hinhThucLayMau"));
-        maThuTu.setCellValueFactory(new PropertyValueFactory<User, Integer>("maThuTu"));
+        maThuTu.setCellValueFactory(new PropertyValueFactory<User, Integer>("stt"));
         hoVaTen.setCellValueFactory(new PropertyValueFactory<User, String>("hoTen"));
         xaNoiOHienTai.setCellValueFactory(new PropertyValueFactory<User, String>("xa"));
         thonNoiOHienTai.setCellValueFactory(new PropertyValueFactory<User, String>("thon"));
         ngheNghiep.setCellValueFactory(new PropertyValueFactory<User, String>("noiLamViec"));
         noiLamViecHocTap.setCellValueFactory(new PropertyValueFactory<User, String>("noiLamViec"));
         doiTuongLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("doiTuongLayMau"));
-        lanLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("lanLayMau"));
+        lanLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("lanLayau"));
         ghiChuNeuCoTruongHopDacBiet.setCellValueFactory(new PropertyValueFactory<User, String>("ghiChu"));
         phanLoaiNoiLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("phanLoaiNoiLayMau"));
-        diaDiemNoiLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("diaDiemNoiLayMau"));
+        diaDiemNoiLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("diaDiemNoiLaymau"));
         huyenNoiLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("huyenLayMau"));
         xaNoiLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("xaLayMau"));
         thonNoiLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("thonLayMau"));
@@ -133,6 +142,12 @@ public class Controller implements Initializable {
         ketQuaXetNghiem.setCellValueFactory(new PropertyValueFactory<User, String>("ketQuaXetNghiem"));
         ctValue.setCellValueFactory(new PropertyValueFactory<User, String>("ctValue"));
         bindTableView(UserDAO.getInstance().getUsers());
+        UserDAO.getInstance().isUpdate.addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean t1) {
+                bindTableView(UserDAO.getInstance().getUsers());
+            }
+        });
     }
 
     void bindTableView(List<User> users) {
@@ -141,18 +156,12 @@ public class Controller implements Initializable {
     }
 
     public void timKiemAction(ActionEvent event) {
-        System.out.println("Button Clicked!");
-
-        Date now = new Date();
-
-        DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS");
-
-        // Dữ liệu Model
-        String dateTimeString = df.format(now);
-
-        // Hiển thị lên VIEW.
-        //myTextField.setText(dateTimeString);
-
+        String query = timKiemTextField.getText();
+        if (query == null || query.isEmpty()) {
+            bindTableView(UserDAO.getInstance().getUsers());
+        } else {
+            bindTableView(UserDAO.getInstance().searchUsers(query));
+        }
     }
 
     public void xuatExcelAction(ActionEvent event) {
@@ -166,25 +175,18 @@ public class Controller implements Initializable {
     public void themDuLieuAction(ActionEvent event) {
         Stage stage = new Stage();
         Parent myNewScene = null;
-        if (event.getSource() == themDuLieu) {
-            //stage = (Stage) themDuLieu.getScene().getWindow();
-            try {
-                myNewScene = FXMLLoader.load(getClass().getResource("insert.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        try {
+            myNewScene = FXMLLoader.load(getClass().getResource("insert.fxml"));
+            Scene scene = new Scene(myNewScene);
+            stage.setScene(scene);
+            stage.setTitle("Nhập dữ liệu");
+            Screen screen = Screen.getPrimary();
+            Rectangle2D bounds = screen.getVisualBounds();
+            stage.setWidth(bounds.getWidth() / 1.2);
+            stage.setHeight(bounds.getHeight() / 1.2);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        Scene scene = new Scene(myNewScene);
-        stage.setScene(scene);
-        stage.setTitle("Nhập dữ liệu");
-        Screen screen = Screen.getPrimary();
-        Rectangle2D bounds = screen.getVisualBounds();
-        //stage.setX(bounds.getMinX());
-        //stage.setY(bounds.getMinY());
-        stage.setWidth(bounds.getWidth() / 1.2);
-        stage.setHeight(bounds.getHeight() / 1.2);
-        stage.show();
-
     }
-
 }

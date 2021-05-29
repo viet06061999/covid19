@@ -1,5 +1,10 @@
 package main1.dao.user;
 
+import javafx.beans.Observable;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ObservableBooleanValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import main1.entity.db.AIMSDB;
 import main1.entity.db.User;
 
@@ -14,6 +19,8 @@ import java.util.stream.Collectors;
 public class UserDAO {
 
     private static UserDAO instance;
+
+   public SimpleBooleanProperty isUpdate =  new SimpleBooleanProperty(false);
 
     private UserDAO() {
         super();
@@ -70,7 +77,9 @@ public class UserDAO {
             ps.setString(32, user.getTinhTrangMau());
             ps.setString(33, user.getKetQuaXetNghiem());
             ps.setString(34, user.getCtValue());
-          return  ps.executeUpdate();
+           int status = ps.executeUpdate();
+            isUpdate.set(!isUpdate.get());
+          return  status;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
