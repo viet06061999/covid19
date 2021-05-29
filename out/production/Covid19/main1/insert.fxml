@@ -6,86 +6,119 @@
 
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main1.InputController">
    <children>
-      <AnchorPane prefHeight="25.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="95.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="0.0">
          <children>
-            <TextField fx:id="maDonVi" promptText="Nhập Mã Đơn vị" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="maNgay" promptText="Nhập Mã ngày" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="maBan" layoutX="210.0" layoutY="10.0" promptText="Nhập Mã bản" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="maDonVi" promptText="Nhập Mã Đơn vị" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="maNgay" promptText="Nhập Mã ngày" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="35.0" />
+            <TextField fx:id="maBan" layoutX="210.0" layoutY="10.0" promptText="Nhập Mã bản" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="70.0" />
+            <Label text="Mã Đơn vị" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Label layoutX="10.0" layoutY="10.0" text="Mã ngày" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0" />
+            <Label layoutX="20.0" layoutY="20.0" text="Mã bản" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="26.0" layoutY="26.0" prefHeight="25.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="60.0">
+      <AnchorPane layoutX="26.0" layoutY="26.0" prefHeight="95.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="110.0">
          <children>
-            <TextField fx:id="maMauBenhPham" promptText="Nhập Mã mẫu bệnh phẩm*" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="hinhThucLayMau" promptText="Nhập Hình thức lấy mẫu*" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="maThuTu" layoutX="210.0" layoutY="10.0" promptText="Nhập Mã thứ tự" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="maMauBenhPham" promptText="Nhập Mã mẫu bệnh phẩm*" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="hinhThucLayMau" promptText="Nhập Hình thức lấy mẫu*" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="35.0" />
+            <TextField fx:id="maThuTu" layoutX="210.0" layoutY="10.0" promptText="Nhập Mã thứ tự" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="70.0" />
+            <Label text="Mã mẫu bệnh phẩm*" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Label layoutX="10.0" layoutY="10.0" text="Hình thức lấy mẫu*" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0" />
+            <Label layoutX="20.0" layoutY="20.0" text="Mã thứ tự" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="26.0" layoutY="70.0" prefHeight="25.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="120.0">
+      <AnchorPane layoutX="26.0" layoutY="70.0" prefHeight="95.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="220.0">
          <children>
-            <TextField fx:id="hoVaTen" promptText="Nhập Họ và tên" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TextField promptText="Nhập Xã (nơi ở hiện tại)" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="0.0" fx:id="xaNoiOHienTai" />
-            <TextField fx:id="thonNoiOHienTai" layoutX="210.0" layoutY="10.0" promptText="Nhập Thôn (nơi ở hiện tại)" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="hoVaTen" promptText="Nhập Họ và tên" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="0.0" />
+            <TextField promptText="Nhập Xã (nơi ở hiện tại)" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="35.0" fx:id="xaNoiOHienTai" />
+            <TextField fx:id="thonNoiOHienTai" layoutX="210.0" layoutY="10.0" promptText="Nhập Thôn (nơi ở hiện tại)" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="70.0" />
+            <Label text="Họ và tên" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Label layoutX="10.0" layoutY="10.0" text="Xã (nơi ở hiện tại)" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0" />
+            <Label layoutX="20.0" layoutY="20.0" text="Thôn (nơi ở hiện tại)" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="26.0" layoutY="130.0" prefHeight="25.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="180.0">
+      <AnchorPane layoutX="26.0" layoutY="130.0" prefHeight="95.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="330.0">
          <children>
-            <TextField fx:id="ngheNghiep" promptText="Nhập Nghề nghiệp" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="noiLamViecHocTap" promptText="Nhập Nơi làm việc, học tập" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="doiTuongLayMau" layoutX="210.0" layoutY="10.0" promptText="Nhập Đối tượng lấy mẫu" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="ngheNghiep" promptText="Nhập Nghề nghiệp" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="noiLamViecHocTap" promptText="Nhập Nơi làm việc, học tập" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="35.0" />
+            <TextField fx:id="doiTuongLayMau" layoutX="210.0" layoutY="10.0" promptText="Nhập Đối tượng lấy mẫu" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="70.0" />
+            <Label text="Nghề nghiệp" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Label layoutX="10.0" layoutY="10.0" text="Nơi làm việc, học tập" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0" />
+            <Label layoutX="20.0" layoutY="20.0" text="Đối tượng lấy mẫu" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="26.0" layoutY="206.0" prefHeight="25.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="240.0">
+      <AnchorPane layoutX="26.0" layoutY="206.0" prefHeight="95.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="440.0">
          <children>
-            <TextField fx:id="lanLayMau" promptText="Nhập Lần lấy mẫu" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="ghiChuNeuCoTruongHopDacBiet" promptText="Nhập Ghi chú (nếu có trường hợp đặc biệt)" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="phanLoaiNoiLayMau" layoutX="210.0" layoutY="10.0" promptText="Nhập Phân loại nơi lấy mẫu" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="lanLayMau" promptText="Nhập Lần lấy mẫu" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="ghiChuNeuCoTruongHopDacBiet" promptText="Nhập Ghi chú (nếu có trường hợp đặc biệt)" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="35.0" />
+            <TextField fx:id="phanLoaiNoiLayMau" layoutX="210.0" layoutY="10.0" promptText="Nhập Phân loại nơi lấy mẫu" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="70.0" />
+            <Label text="Lần lấy mẫu" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Label text="Ghi chú (nếu có trường hợp đặc biệt)" layoutX="10.0" layoutY="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0" />
+            <Label text="Phân loại nơi lấy mẫu" layoutX="20.0" layoutY="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="26.0" layoutY="266.0" prefHeight="25.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="300.0">
+      <AnchorPane layoutX="26.0" layoutY="266.0" prefHeight="95.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="550.0">
          <children>
-            <TextField fx:id="diaDiemNoiLayMau" promptText="Nhập Địa điểm nơi lấy mẫu" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="huyenNoiLayMau" promptText="Nhập Huyện (nơi lấy mẫu)" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="0.0" />
-            <TextField layoutX="210.0" layoutY="10.0" promptText="Nhập Xã (nơi lấy mẫu)" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="0.0" fx:id="xaNoiLayMau" />
+            <TextField fx:id="diaDiemNoiLayMau" promptText="Nhập Địa điểm nơi lấy mẫu" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="huyenNoiLayMau" promptText="Nhập Huyện (nơi lấy mẫu)" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="35.0" />
+            <TextField layoutX="210.0" layoutY="10.0" promptText="Nhập Xã (nơi lấy mẫu)" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="70.0" fx:id="xaNoiLayMau" />
+            <Label text="Địa điểm nơi lấy mẫu" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Label text="Huyện (nơi lấy mẫu)" layoutX="10.0" layoutY="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0" />
+            <Label text="Xã (nơi lấy mẫu)" layoutX="20.0" layoutY="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="26.0" layoutY="326.0" prefHeight="25.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="360.0">
+      <AnchorPane layoutX="26.0" layoutY="326.0" prefHeight="95.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="0.0">
          <children>
-            <TextField fx:id="thonNoiLayMau" promptText="Nhập Thôn (nơi lấy mẫu)" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="loaiMau" promptText="Nhập Loại mẫu" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="donViLayMau" layoutX="210.0" layoutY="10.0" promptText="Nhập Đơn vị lấy mẫu" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="0.0" />
-         </children>
-      </AnchorPane>
-
-      <AnchorPane layoutX="26.0" layoutY="326.0" prefHeight="25.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="420.0">
-         <children>
-            <TextField fx:id="maNguoiDuocLayMau" promptText="Nhập Mã người được lấy mẫu*" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="ngayLayMau" promptText="Nhập Ngày lấy mẫu*" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="loaiGop" layoutX="210.0" layoutY="10.0" promptText="Nhập Loại gộp*" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="0.0" />
-         </children>
-      </AnchorPane>
-
-      <AnchorPane layoutX="26.0" layoutY="326.0" prefHeight="25.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="480.0">
-         <children>
-            <TextField fx:id="ngayXetNghiem" promptText="Nhập Ngày xét nghiệm" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="phuongPhapXetNghiem" promptText="Nhập Phương pháp xét nghiệm" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="ngayTraKetQuaXetNghiem" layoutX="210.0" layoutY="10.0" promptText="Nhập Ngày trả KQXN" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="0.0" />
-         </children>
-      </AnchorPane>
-
-      <AnchorPane layoutX="26.0" layoutY="326.0" prefHeight="25.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="540.0">
-         <children>
-            <TextField fx:id="donViGuiMau" promptText="Nhập Đơn vị gửi mẫu" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="tinhTrangMau" promptText="Nhập Tình trạng mẫu" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="0.0" />
-            <TextField fx:id="ketQuaXetNghiem" layoutX="210.0" layoutY="10.0" promptText="Nhập Kết quả xét nghiệm" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="thonNoiLayMau" promptText="Nhập Thôn (nơi lấy mẫu)" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="loaiMau" promptText="Nhập Loại mẫu" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="35.0" />
+            <TextField fx:id="donViLayMau" layoutX="210.0" layoutY="10.0" promptText="Nhập Đơn vị lấy mẫu" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="70.0" />
+            <Label text="Thôn (nơi lấy mẫu)" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="0.0" />
+            <Label text="Loại mẫu" layoutX="10.0" layoutY="10.0" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="35.0" />
+            <Label text="Đơn vị lấy mẫu" layoutX="20.0" layoutY="20.0" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="70.0" />
          </children>
       </AnchorPane>
 
-      <AnchorPane layoutX="26.0" layoutY="326.0" prefHeight="25.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="600.0">
+      <AnchorPane layoutX="26.0" layoutY="326.0" prefHeight="95.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="110.0">
          <children>
-            <TextField fx:id="ctValue" promptText="Nhập CT Value" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="maNguoiDuocLayMau" promptText="Nhập Mã người được lấy mẫu*" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="ngayLayMau" promptText="Nhập Ngày lấy mẫu*" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="35.0" />
+            <TextField fx:id="loaiGop" layoutX="210.0" layoutY="10.0" promptText="Nhập Loại gộp*" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="70.0" />
+            <Label text="Mã người được lấy mẫu*" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="0.0" />
+            <Label text="Ngày lấy mẫu*" layoutX="10.0" layoutY="10.0" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="35.0" />
+            <Label text="Loại gộp*" layoutX="20.0" layoutY="20.0" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="70.0" />
          </children>
       </AnchorPane>
-      <Button fx:id="luu" mnemonicParsing="false" onAction="#luuAction" prefWidth="66.0" text="Lưu" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="660.0" />
+
+      <AnchorPane layoutX="26.0" layoutY="326.0" prefHeight="95.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="220.0">
+         <children>
+            <TextField fx:id="ngayXetNghiem" promptText="Nhập Ngày xét nghiệm" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="phuongPhapXetNghiem" promptText="Nhập Phương pháp xét nghiệm" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="35.0" />
+            <TextField fx:id="ngayTraKetQuaXetNghiem" layoutX="210.0" layoutY="10.0" promptText="Nhập Ngày trả KQXN" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="70.0" />
+            <Label text="Ngày xét nghiệm" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="0.0" />
+            <Label text="Phương pháp xét nghiệm" layoutX="10.0" layoutY="10.0" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="35.0" />
+            <Label text="Nhập Ngày trả KQXN" layoutX="20.0" layoutY="20.0" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="70.0" />
+
+         </children>
+      </AnchorPane>
+
+      <AnchorPane layoutX="26.0" layoutY="326.0" prefHeight="95.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="330.0">
+         <children>
+            <TextField fx:id="donViGuiMau" promptText="Nhập Đơn vị gửi mẫu" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="tinhTrangMau" promptText="Nhập Tình trạng mẫu" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="35.0" />
+            <TextField fx:id="ketQuaXetNghiem" layoutX="210.0" layoutY="10.0" promptText="Nhập Kết quả xét nghiệm" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="70.0" />
+            <Label text="Đơn vị gửi mẫu" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="0.0" />
+            <Label text="Tình trạng mẫu" layoutX="10.0" layoutY="10.0" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="35.0" />
+            <Label text="Kết quả xét nghiệm" layoutX="20.0" layoutY="20.0" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="70.0" />
+         </children>
+      </AnchorPane>
+
+      <AnchorPane layoutX="26.0" layoutY="326.0" prefHeight="95.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="440.0">
+         <children>
+            <TextField fx:id="ctValue" promptText="Nhập CT Value" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="0.0" />
+            <Label text="CT Value" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="0.0" />
+
+         </children>
+      </AnchorPane>
+      <Button fx:id="luu" mnemonicParsing="false" onAction="#luuAction" prefWidth="80.0" text="Lưu" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="550.0" />
    </children>
    <padding>
       <Insets top="16.0" />
