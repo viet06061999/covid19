@@ -70,8 +70,8 @@ public class Controller {
         Rectangle2D bounds = screen.getVisualBounds();
         //stage.setX(bounds.getMinX());
         //stage.setY(bounds.getMinY());
-        stage.setWidth(bounds.getWidth() / 1.5);
-        stage.setHeight(bounds.getHeight() / 1.5);
+        stage.setWidth(bounds.getWidth() / 1.2);
+        stage.setHeight(bounds.getHeight() / 1.2);
         stage.show();
 
     }
