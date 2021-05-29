@@ -11,14 +11,14 @@
       <TextField fx:id="timKiemTextField" promptText="Tìm kiếm" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="20.0" />
       <TableView fx:id="myTableView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="100.0">
         <columns>
-          <TableColumn fx:id="maDonVi" prefWidth="75.0" text="Mã Đơn vị" />
-          <TableColumn fx:id="maNgay" prefWidth="75.0" text="Mã ngày" />
+            <TableColumn fx:id="maDonVi" prefWidth="75.0" text="Mã Đơn vị" />
+            <TableColumn fx:id="maNgay" prefWidth="75.0" text="Mã ngày" />
             <TableColumn fx:id="maBan" prefWidth="75.0" text="Mã bản" />
             <TableColumn fx:id="maMauBenhPham" prefWidth="75.0" text="Mã mẫu bệnh phẩm*" />
             <TableColumn fx:id="hinhThucLayMau" prefWidth="75.0" text="Hình thức lấy mẫu*" />
             <TableColumn fx:id="maThuTu" prefWidth="75.0" text="Mã thứ tự" />
             <TableColumn fx:id="hoVaTen" prefWidth="75.0" text="Họ và tên" />
-            <TableColumn prefWidth="75.0" text="Xã (nơi ở hiện tại)" fx:id="xaNoiOHienTai" />
+            <TableColumn fx:id="xaNoiOHienTai" prefWidth="75.0" text="Xã (nơi ở hiện tại)"  />
             <TableColumn fx:id="thonNoiOHienTai" prefWidth="75.0" text="Thôn (nơi ở hiện tại" />
             <TableColumn fx:id="ngheNghiep" prefWidth="75.0" text="Nghề nghiệp" />
             <TableColumn fx:id="noiLamViecHocTap" prefWidth="75.0" text="Nơi làm việc, học tập" />
@@ -28,7 +28,7 @@
             <TableColumn fx:id="phanLoaiNoiLayMau" prefWidth="75.0" text="Phân loại nơi lấy mẫu" />
             <TableColumn fx:id="diaDiemNoiLayMau" prefWidth="75.0" text="Địa điểm nơi lấy mẫu" />
             <TableColumn fx:id="huyenNoiLayMau" prefWidth="75.0" text="Huyện (nơi lấy mẫu)" />
-            <TableColumn prefWidth="75.0" text="Xã (nơi lấy mẫu)" fx:id="xaNoiLayMau" />
+            <TableColumn fx:id="xaNoiLayMau" prefWidth="75.0" text="Xã (nơi lấy mẫu)" />
             <TableColumn fx:id="thonNoiLayMau" prefWidth="75.0" text="Thôn (nơi lấy mẫu)" />
             <TableColumn fx:id="loaiMau" prefWidth="75.0" text="Loại mẫu" />
             <TableColumn fx:id="donViLayMau" prefWidth="75.0" text="Đơn vị lấy mẫu" />
