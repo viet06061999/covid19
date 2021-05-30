@@ -1,13 +1,17 @@
 package main1.dao.user;
 
-import javafx.beans.Observable;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.value.ObservableBooleanValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import main1.entity.db.AIMSDB;
-import main1.entity.db.User;
+//import com.google.gson.Gson;
 
+import com.google.gson.Gson;
+import javafx.beans.property.SimpleBooleanProperty;
+import main1.entity.db.User;
+import org.json.simple.JSONArray;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +24,7 @@ public class UserDAO {
 
     private static UserDAO instance;
 
-   public SimpleBooleanProperty isUpdate =  new SimpleBooleanProperty(false);
+    public SimpleBooleanProperty isUpdate = new SimpleBooleanProperty(false);
 
     private UserDAO() {
         super();
@@ -31,123 +35,107 @@ public class UserDAO {
         return instance;
     }
 
-    public int saveUser(User user)  {
-
-        PreparedStatement ps =
-                null;
+    public void saveUser(User user) {
+        List<User> users = getUsers();
+        if (users == null) users = new ArrayList<>();
+        user.setStt(users.size() + 1);
+        users.add(user);
+        String json = new Gson().toJson(users);
+        JSONParser jsonParser = new JSONParser();
+        Object obj = null;
         try {
-            ps = AIMSDB.getConnection().prepareStatement
-                    ("INSERT INTO User (maDonVi,maNgay,maBan,maMauBenhPham,hinhThucLayMau,hoTen,namSinh,gioiTinh,sdt" +
-                            ",huyen,xa,thon,ngheNghiep,noiLamViec,doiTuongLayMau,lanLaymau,ghiChu,phanLoaiNoiLayMau" +
-                            ",diaDiemNoiLaymau,huyenLayMau,xaLayMau,thonLayMau,loaiMau,donViLayMau,maNguoiDuocLayMau," +
-                            "ngayLayMau,loaiGop,ngayXetNghiem,phuongPhapXetNghiem,ngayTraKetQua,donViGuiMau, tinhTrangMau,ketQuaXetNghiem,ctValue) " +
-                            "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-
-            ps.setString(1, user.getMaDonVi());
-            ps.setString(2, user.getMaNgay());
-            ps.setString(3, user.getMaBan());
-            ps.setString(4, user.getMaMauBenhPham());
-            ps.setString(5, user.getHinhThucLayMau());
-            ps.setString(6, user.getHoTen());
-            ps.setString(7, user.getNamSinh());
-            ps.setString(8, user.getGioiTinh());
-            ps.setString(9, user.getSdt());
-            ps.setString(10, user.getHuyen());
-            ps.setString(11, user.getXa());
-            ps.setString(12, user.getThon());
-            ps.setString(13, user.getNgheNghiep());
-            ps.setString(14, user.getNoiLamViec());
-            ps.setString(15, user.getDoiTuongLayMau());
-            ps.setString(16, user.getLanLaymau());
-            ps.setString(17, user.getGhiChu());
-            ps.setString(18, user.getPhanLoaiNoiLayMau());
-            ps.setString(19, user.getDiaDiemNoiLaymau());
-            ps.setString(20, user.getHuyenLayMau());
-            ps.setString(21, user.getXaLayMau());
-            ps.setString(22, user.getThonLayMau());
-            ps.setString(23, user.getLoaiMau());
-            ps.setString(24, user.getDonViLayMau());
-            ps.setString(25, user.getMaNguoiDuocLayMau());
-            ps.setString(26, user.getNgayLayMau());
-            ps.setString(27, user.getLoaiGop());
-            ps.setString(28, user.getNgayXetNghiem());
-            ps.setString(29, user.getPhuongPhapXetNghiem());
-            ps.setString(30, user.getNgayTraKetQua());
-            ps.setString(31, user.getDonViGuiMau());
-            ps.setString(32, user.getTinhTrangMau());
-            ps.setString(33, user.getKetQuaXetNghiem());
-            ps.setString(34, user.getCtValue());
-           int status = ps.executeUpdate();
+            obj = jsonParser.parse(json);
+            JSONArray jsonArray = (JSONArray) obj;
+            FileOutputStream fos = new FileOutputStream("users.json");
+            fos.write(jsonArray.toJSONString().getBytes(StandardCharsets.UTF_8));
+            fos.close();
+        } catch (ParseException | IOException e) {
+            e.printStackTrace();
+        } finally {
             isUpdate.set(!isUpdate.get());
-          return  status;
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
         }
-        return -1;
+    }
+
+    public void editUser(User user) {
+        List<User> users = getUsers();
+        if (users == null) users = new ArrayList<>();
+        users.removeIf(element -> {
+            return  element.getStt().equals(user.getStt());
+        });
+        users.add(user.getStt() - 1,user);
+        for(int i =0;i<users.size();i++){
+            users.get(i).setStt(i+1);
+        }
+        String json = new Gson().toJson(users);
+        JSONParser jsonParser = new JSONParser();
+        Object obj = null;
+        try {
+            obj = jsonParser.parse(json);
+            JSONArray jsonArray = (JSONArray) obj;
+            FileOutputStream fos = new FileOutputStream("users.json");
+            fos.write(jsonArray.toJSONString().getBytes(StandardCharsets.UTF_8));
+            fos.close();
+        } catch (ParseException | IOException e) {
+            e.printStackTrace();
+        } finally {
+            isUpdate.set(!isUpdate.get());
+        }
+    }
+
+    public void deleteUser(Integer stt) {
+        List<User> users = getUsers();
+        if (users == null) users = new ArrayList<>();
+        users.removeIf(element -> {
+            return  element.getStt().equals(stt);
+        });
+        for(int i =0;i<users.size();i++){
+            users.get(i).setStt(i+1);
+        }
+        String json = new Gson().toJson(users);
+        JSONParser jsonParser = new JSONParser();
+        Object obj = null;
+        try {
+            obj = jsonParser.parse(json);
+            JSONArray jsonArray = (JSONArray) obj;
+            FileOutputStream fos = new FileOutputStream("users.json");
+            fos.write(jsonArray.toJSONString().getBytes(StandardCharsets.UTF_8));
+            fos.close();
+        } catch (ParseException | IOException e) {
+            e.printStackTrace();
+        } finally {
+            isUpdate.set(!isUpdate.get());
+        }
     }
 
     public List<User> getUsers() {
-        String sql = "SELECT * FROM User ";
-        List<User> userList = new ArrayList<>();
         try {
-            ResultSet res = AIMSDB.getConnection().createStatement().executeQuery(sql);
-            while (res.next()) {
-                User user = new User();
-                user.setStt(res.getInt("stt"));
-                user.setMaDonVi(res.getString("maDonVi"));
-                user.setMaNgay(res.getString("maNgay"));
-                user.setMaBan(res.getString("maBan"));
-                user.setMaMauBenhPham(res.getString("maMauBenhPham"));
-                user.setHinhThucLayMau(res.getString("hinhThucLayMau"));
-                user.setHoTen(res.getString("hoTen"));
-                user.setNamSinh(res.getString("namSinh"));
-                user.setGioiTinh(res.getString("gioiTinh"));
-                user.setSdt(res.getString("sdt"));
-                user.setHuyen(res.getString("huyen"));
-                user.setXa(res.getString("xa"));
-                user.setThon(res.getString("thon"));
-                user.setNgheNghiep(res.getString("ngheNghiep"));
-                user.setNoiLamViec(res.getString("noiLamViec"));
-                user.setDoiTuongLayMau(res.getString("doiTuongLayMau"));
-                user.setLanLaymau(res.getString("lanLaymau"));
-                user.setGhiChu(res.getString("ghiChu"));
-                user.setPhanLoaiNoiLayMau(res.getString("phanLoaiNoiLayMau"));
-                user.setDiaDiemNoiLaymau(res.getString("diaDiemNoiLaymau"));
-                user.setHuyenLayMau(res.getString("huyenLayMau"));
-                user.setXaLayMau(res.getString("xaLayMau"));
-                user.setThonLayMau(res.getString("thonLayMau"));
-                user.setLoaiMau(res.getString("loaiMau"));
-                user.setDonViLayMau(res.getString("donViLayMau"));
-                user.setMaNguoiDuocLayMau(res.getString("maNguoiDuocLayMau"));
-                user.setNgayLayMau(res.getString("ngayLayMau"));
-                user.setLoaiGop(res.getString("loaiGop"));
-                user.setNgayXetNghiem(res.getString("ngayXetNghiem"));
-                user.setPhuongPhapXetNghiem(res.getString("phuongPhapXetNghiem"));
-                user.setNgayTraKetQua(res.getString("ngayTraKetQua"));
-                user.setDonViGuiMau(res.getString("donViGuiMau"));
-                user.setTinhTrangMau(res.getString("tinhTrangMau"));
-                user.setKetQuaXetNghiem(res.getString("ketQuaXetNghiem"));
-                user.setCtValue(res.getString("ctValue"));
-                userList.add(user);
-            }
-        } catch (SQLException e) {
+            byte[] bytes = Files.readAllBytes(new File("users.json").toPath());
+            JSONParser jsonParser = new JSONParser();
+            Object obj = jsonParser.parse(new String(bytes, StandardCharsets.UTF_8));
+            JSONArray users = (JSONArray) obj;
+            return User.toJsonArray(users.toJSONString());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
             e.printStackTrace();
         }
-        return userList;
+        return new ArrayList<>();
     }
 
     public List<User> searchUsers(String query) {
         List<User> userList = getUsers();
         userList = userList.stream().filter(element -> {
-          return  element.toString().contains(query);
+            return element.toString().contains(query);
         }).collect(Collectors.toList());
         return userList;
     }
 
-    public void delete(String stt) throws SQLException {
-        String sql = "DELETE FROM User WHERE 1";
-        AIMSDB.getConnection().createStatement().executeUpdate(sql);
-    }
+//    public void delete(String stt) throws SQLException {
+//        String sql = "DELETE FROM User WHERE 1";
+//        AIMSDB.getConnection().createStatement().executeUpdate(sql);
+//    }
 
     public static void main(String[] args) {
         User user = new User();

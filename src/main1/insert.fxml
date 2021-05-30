@@ -23,7 +23,7 @@
 <!--            <TextField fx:id="maThuTu" layoutX="210.0" layoutY="10.0" promptText="Nhập Mã thứ tự" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="70.0" />-->
             <Label text="Mã mẫu bệnh phẩm*" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <Label layoutX="10.0" layoutY="10.0" text="Hình thức lấy mẫu*" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0" />
-            <Label layoutX="20.0" layoutY="20.0" text="Mã thứ tự" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0" />
+<!--            <Label layoutX="20.0" layoutY="20.0" text="Mã thứ tự" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0" />-->
          </children>
       </AnchorPane>
       <AnchorPane layoutX="26.0" layoutY="70.0" prefHeight="95.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="220.0">
@@ -118,7 +118,8 @@
 
          </children>
       </AnchorPane>
-      <Button fx:id="luu" mnemonicParsing="false" onAction="#luuAction" prefWidth="80.0" text="Lưu" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="550.0" />
+      <Button fx:id="luu" mnemonicParsing="false" onAction="#luuAction" prefWidth="80.0" text="Lưu" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="250.0" />
+
    </children>
    <padding>
       <Insets top="16.0" />

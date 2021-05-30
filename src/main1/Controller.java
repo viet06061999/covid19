@@ -1,25 +1,25 @@
 package main1;
 
 
+import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import main1.dao.user.UserDAO;
 import main1.entity.db.User;
 import main1.utils.ExelUtil;
@@ -148,6 +148,37 @@ public class Controller implements Initializable {
                 bindTableView(UserDAO.getInstance().getUsers());
             }
         });
+        myTableView.setRowFactory(
+                new Callback<TableView<User>, TableRow<User>>() {
+                    @Override
+                    public TableRow<User> call(TableView<User> tableView) {
+                        final TableRow<User> row = new TableRow<>();
+                        final ContextMenu rowMenu = new ContextMenu();
+                        MenuItem editItem = new MenuItem("Sửa");
+                        editItem.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                new EditController(row.getItem()).showStage();
+                            }
+                        });
+                        MenuItem removeItem = new MenuItem("Xóa");
+                        removeItem.setOnAction(new EventHandler<ActionEvent>() {
+
+                            @Override
+                            public void handle(ActionEvent event) {
+                                UserDAO.getInstance().deleteUser(row.getItem().getStt());
+                            }
+                        });
+                        rowMenu.getItems().addAll(editItem, removeItem);
+
+                        // only display context menu for non-empty rows:
+                        row.contextMenuProperty().bind(
+                                Bindings.when(row.emptyProperty())
+                                        .then((ContextMenu) null)
+                                        .otherwise(rowMenu));
+                        return row;
+                    }
+                });
     }
 
     void bindTableView(List<User> users) {
@@ -182,8 +213,8 @@ public class Controller implements Initializable {
             stage.setTitle("Nhập dữ liệu");
             Screen screen = Screen.getPrimary();
             Rectangle2D bounds = screen.getVisualBounds();
-            stage.setWidth(bounds.getWidth() / 1.2);
-            stage.setHeight(bounds.getHeight() / 1.2);
+            stage.setWidth(bounds.getWidth() / 1.1);
+            stage.setHeight(bounds.getHeight() / 1.1);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
