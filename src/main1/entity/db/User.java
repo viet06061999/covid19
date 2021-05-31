@@ -1,42 +1,51 @@
 package main1.entity.db;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.util.List;
+
 public class User {
     private Integer stt;
-    private String maDonVi="";
-    private String maNgay="";
-    private String maBan="";
-    private String maMauBenhPham="";
-    private String hinhThucLayMau="";
-    private String hoTen="";
-    private String namSinh="";
-    private String gioiTinh="";
-    private String sdt="";
-    private String huyen="";
-    private String xa="";
-    private String thon="";
-    private String ngheNghiep="";
-    private String noiLamViec="";
-    private String doiTuongLayMau="";
+    private String maDonVi = "";
+    private String maNgay = "";
+    private String maBan = "";
+    private String maMauBenhPham = "";
+    private String hinhThucLayMau = "";
+    private String hoTen = "";
+    private String namSinh = "";
+    private String gioiTinh = "";
+    private String sdt = "";
+    private String huyen = "";
+    private String xa = "";
+    private String thon = "";
+    private String ngheNghiep = "";
+    private String noiLamViec = "";
+    private String doiTuongLayMau = "";
     private String lanLaymau;
-    private String ghiChu="";
-    private String phanLoaiNoiLayMau="";
-    private String diaDiemNoiLaymau="";
-    private String huyenLayMau="";
-    private String xaLayMau="";
-    private String thonLayMau="";
-    private String loaiMau="";
-    private String donViLayMau="";
-    private String maNguoiDuocLayMau="";
-    private String ngayLayMau="";
+    private String ghiChu = "";
+    private String phanLoaiNoiLayMau = "";
+    private String diaDiemNoiLaymau = "";
+    private String huyenLayMau = "";
+    private String xaLayMau = "";
+    private String thonLayMau = "";
+    private String loaiMau = "";
+    private String donViLayMau = "";
+    private String maNguoiDuocLayMau = "";
+    private String ngayLayMau = "";
     private String loaiGop;
-    private String ngayXetNghiem="";
-    private String phuongPhapXetNghiem="";
-    private String ngayTraKetQua="";
-    private String donViGuiMau="";
-    private String tinhTrangMau="";
-    private String ketQuaXetNghiem="";
-    private String ctValue="";
-
+    private String ngayXetNghiem = "";
+    private String phuongPhapXetNghiem = "";
+    private String ngayTraKetQua = "";
+    private String donViGuiMau = "";
+    private String tinhTrangMau = "";
+    private String ketQuaXetNghiem = "";
+    private String ctValue = "";
     public Integer getStt() {
         return stt;
     }
@@ -315,5 +324,63 @@ public class User {
 
     public void setCtValue(String ctValue) {
         this.ctValue = ctValue;
+    }
+
+    public JSONObject toJson() throws ParseException {
+        Gson gson = new Gson();
+        String json = gson.toJson(this);
+        JSONParser parser = new JSONParser();
+        return  (JSONObject) parser.parse(json);
+    }
+
+    public User jsonToObject(String json){
+        Gson gson = new Gson();
+        User user = gson.fromJson(json, User.class);
+        return  user;
+    }
+
+    public static List<User> toJsonArray(String json){
+        Gson gson = new Gson();
+        List<User> userList = gson.fromJson(json, new TypeToken<List<User>>(){}.getType());
+        return userList;
+    }
+
+    @Override
+    public String toString() {
+        return stt +
+                maDonVi +
+                maNgay +
+                maBan +
+                maMauBenhPham +
+                hinhThucLayMau +
+                hoTen +
+                namSinh +
+                gioiTinh +
+                sdt +
+                huyen +
+                xa +
+                thon +
+                ngheNghiep +
+                noiLamViec +
+                doiTuongLayMau +
+                lanLaymau +
+                ghiChu +
+                phanLoaiNoiLayMau +
+                diaDiemNoiLaymau +
+                huyenLayMau +
+                xaLayMau +
+                thonLayMau +
+                loaiMau +
+                donViLayMau +
+                maNguoiDuocLayMau +
+                ngayLayMau +
+                loaiGop +
+                ngayXetNghiem +
+                phuongPhapXetNghiem +
+                ngayTraKetQua +
+                donViGuiMau +
+                tinhTrangMau +
+                ketQuaXetNghiem +
+                ctValue;
     }
 }

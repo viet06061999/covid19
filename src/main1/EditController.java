@@ -1,16 +1,21 @@
 package main1;
 
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import main1.dao.user.UserDAO;
 import main1.entity.db.User;
 
-public class InputController {
+import java.io.IOException;
+
+public class EditController {
 
     @FXML
     TextField maDonVi;
@@ -80,10 +85,84 @@ public class InputController {
     TextField ketQuaXetNghiem;
     @FXML
     TextField ctValue;
+    User user;
+    private Stage thisStage;
+
+    public EditController(User user) {
+        // We received the first controller, now let's make it usable throughout this controller.
+        this.user = user;
+        // Create the new stage
+        thisStage = new Stage();
+
+        // Load the FXML file
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("edit.fxml"));
+            // Set this class as the controller
+            loader.setController(this);
+            thisStage.setScene(new Scene(loader.load()));
+            // Setup the window/stage
+            Screen screen = Screen.getPrimary();
+            Rectangle2D bounds = screen.getVisualBounds();
+            thisStage.setTitle("Chỉnh sửa thông tin");
+            thisStage.setWidth(bounds.getWidth() /1.3);
+            thisStage.setHeight(bounds.getHeight());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void initialize() {
+        maDonVi.setText(user.getMaDonVi());
+        maNgay.setText(user.getMaNgay());
+        maBan.setText(user.getMaBan());
+        maMauBenhPham.setText(user.getMaMauBenhPham());
+        hinhThucLayMau.setText(user.getHinhThucLayMau());
+        hoVaTen.setText(user.getHoTen());
+        namSinh.setText(user.getNamSinh());
+        gioiTinh.setText(user.getGioiTinh());
+        sdt.setText(user.getSdt());
+        huyenNoiOHienTai.setText(user.getHuyen());
+
+        xaNoiOHienTai.setText(user.getXa());
+        thonNoiOHienTai.setText(user.getThon());
+        ngheNghiep.setText(user.getNgheNghiep());
+        noiLamViecHocTap.setText(user.getNoiLamViec());
+        doiTuongLayMau.setText(user.getDoiTuongLayMau());
+        lanLayMau.setText(user.getLanLaymau());
+        ghiChuNeuCoTruongHopDacBiet.setText(user.getGhiChu());
+        phanLoaiNoiLayMau.setText(user.getPhanLoaiNoiLayMau());
+
+        diaDiemNoiLayMau.setText(user.getDiaDiemNoiLaymau());
+        huyenNoiLayMau.setText(user.getHuyenLayMau());
+        xaNoiLayMau.setText(user.getXaLayMau());
+        thonNoiLayMau.setText(user.getThonLayMau());
+        loaiMau.setText(user.getLoaiMau());
+        donViLayMau.setText(user.getDonViLayMau());
+        maNguoiDuocLayMau.setText(user.getMaNguoiDuocLayMau());
+        ngayLayMau.setText(user.getNgayLayMau());
+        loaiGop.setText(user.getLoaiGop());
+        ngayXetNghiem.setText(user.getNgayXetNghiem());
+        phuongPhapXetNghiem.setText(user.getPhuongPhapXetNghiem());
+        ngayTraKetQuaXetNghiem.setText(user.getNgayTraKetQua());
+        donViGuiMau.setText(user.getDonViGuiMau());
+        tinhTrangMau.setText(user.getTinhTrangMau());
+        ketQuaXetNghiem.setText(user.getKetQuaXetNghiem());
+        ctValue.setText(user.getCtValue());
+    }
+
+    /**
+     * Show the stage that was loaded in the constructor
+     */
+    public void showStage() {
+        thisStage.showAndWait();
+    }
 
     public void luuAction(ActionEvent event) {
         try {
             User user = new User();
+            user.setStt(this.user.getStt());
             user.setMaDonVi(maDonVi.getText());
             user.setMaNgay(maNgay.getText());
             user.setMaBan(maBan.getText());
@@ -118,11 +197,11 @@ public class InputController {
             user.setTinhTrangMau(tinhTrangMau.getText());
             user.setKetQuaXetNghiem(ketQuaXetNghiem.getText());
             user.setCtValue(ctValue.getText());
-            UserDAO.getInstance().saveUser(user);
+            UserDAO.getInstance().editUser(user);
             final Node source = (Node) event.getSource();
             final Stage stage = (Stage) source.getScene().getWindow();
             stage.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
