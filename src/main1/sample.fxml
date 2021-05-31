@@ -8,7 +8,7 @@
    <children>
       <Button fx:id="timKiem" mnemonicParsing="false" onAction="#timKiemAction" prefHeight="25.0" prefWidth="200.0" text="Tìm Kiếm" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
       <Button fx:id="themDuLieu" mnemonicParsing="false" onAction="#themDuLieuAction" prefHeight="25.0" prefWidth="200.0" text="Thêm" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0" />
-      <TextField fx:id="timKiemTextField" promptText="Tìm kiếm" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="20.0" />
+      <TextField fx:id="timKiemTextField" promptText="Tìm kiếm" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="20.0" />
       <TableView fx:id="myTableView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="100.0">
         <columns>
             <TableColumn fx:id="maDonVi" prefWidth="75.0" text="Mã Đơn vị" />
