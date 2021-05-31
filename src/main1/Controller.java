@@ -111,6 +111,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Commit cho vui
         maDonVi.setCellValueFactory(new PropertyValueFactory<User, String>("maDonVi"));
         maNgay.setCellValueFactory(new PropertyValueFactory<User, String>("maNgay"));
         maBan.setCellValueFactory(new PropertyValueFactory<User, String>("maBan"));
