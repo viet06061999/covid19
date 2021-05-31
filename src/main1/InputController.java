@@ -24,14 +24,7 @@ public class InputController {
     TextField hinhThucLayMau;
     @FXML
     TextField hoVaTen;
-//    @FXML
-//    TextField namSinh;
-//    @FXML
-//    TextField gioiTinh;
-//    @FXML
-//    TextField sdt;
-//    @FXML
-//    TextField huyenNoiOHienTai;
+
     @FXML
     TextField xaNoiOHienTai;
     @FXML
@@ -81,6 +74,15 @@ public class InputController {
     @FXML
     TextField ctValue;
 
+    @FXML
+    TextField namSinh;
+    @FXML
+    TextField gioiTinh;
+    @FXML
+    TextField sdt;
+    @FXML
+    TextField huyenNoiOHienTai;
+
     public void luuAction(ActionEvent event) {
         try {
             User user = new User();
@@ -90,10 +92,10 @@ public class InputController {
             user.setMaMauBenhPham(maMauBenhPham.getText());
             user.setHinhThucLayMau(hinhThucLayMau.getText());
             user.setHoTen(hoVaTen.getText());
-//            user.setNamSinh(namSinh.getText());
-//            user.setGioiTinh(gioiTinh.getText());
-//            user.setSdt(sdt.getText());
-//            user.setHuyen(huyenNoiOHienTai.getText());
+            user.setNamSinh(namSinh.getText());
+            user.setGioiTinh(gioiTinh.getText());
+            user.setSdt(sdt.getText());
+            user.setHuyen(huyenNoiOHienTai.getText());
             user.setXa(xaNoiOHienTai.getText());
             user.setThon(thonNoiOHienTai.getText());
             user.setNgheNghiep(ngheNghiep.getText());

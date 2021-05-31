@@ -46,7 +46,6 @@ public class User {
     private String tinhTrangMau = "";
     private String ketQuaXetNghiem = "";
     private String ctValue = "";
-
     public Integer getStt() {
         return stt;
     }

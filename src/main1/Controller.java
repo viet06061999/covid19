@@ -203,6 +203,14 @@ public class Controller implements Initializable {
         }
     }
 
+    public void nhapExcelAction(ActionEvent event) {
+        try {
+            ExelUtil.importExcel(myTableView);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void themDuLieuAction(ActionEvent event) {
         Stage stage = new Stage();
         Parent myNewScene = null;
@@ -213,8 +221,8 @@ public class Controller implements Initializable {
             stage.setTitle("Nhập dữ liệu");
             Screen screen = Screen.getPrimary();
             Rectangle2D bounds = screen.getVisualBounds();
-            stage.setWidth(bounds.getWidth() / 1.1);
-            stage.setHeight(bounds.getHeight() / 1.1);
+            stage.setWidth(bounds.getWidth() /1.3);
+            stage.setHeight(bounds.getHeight());
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

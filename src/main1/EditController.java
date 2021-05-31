@@ -29,14 +29,14 @@ public class EditController {
     TextField hinhThucLayMau;
     @FXML
     TextField hoVaTen;
-    //    @FXML
-//    TextField namSinh;
-//    @FXML
-//    TextField gioiTinh;
-//    @FXML
-//    TextField sdt;
-//    @FXML
-//    TextField huyenNoiOHienTai;
+    @FXML
+    TextField namSinh;
+    @FXML
+    TextField gioiTinh;
+    @FXML
+    TextField sdt;
+    @FXML
+    TextField huyenNoiOHienTai;
     @FXML
     TextField xaNoiOHienTai;
     @FXML
@@ -104,8 +104,8 @@ public class EditController {
             Screen screen = Screen.getPrimary();
             Rectangle2D bounds = screen.getVisualBounds();
             thisStage.setTitle("Chỉnh sửa thông tin");
-            thisStage.setWidth(bounds.getWidth() / 1.2);
-            thisStage.setHeight(bounds.getHeight() / 1.2);
+            thisStage.setWidth(bounds.getWidth() /1.3);
+            thisStage.setHeight(bounds.getHeight());
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -164,10 +164,10 @@ public class EditController {
             user.setMaMauBenhPham(maMauBenhPham.getText());
             user.setHinhThucLayMau(hinhThucLayMau.getText());
             user.setHoTen(hoVaTen.getText());
-//            user.setNamSinh(namSinh.getText());
-//            user.setGioiTinh(gioiTinh.getText());
-//            user.setSdt(sdt.getText());
-//            user.setHuyen(huyenNoiOHienTai.getText());
+            user.setNamSinh(namSinh.getText());
+            user.setGioiTinh(gioiTinh.getText());
+            user.setSdt(sdt.getText());
+            user.setHuyen(huyenNoiOHienTai.getText());
             user.setXa(xaNoiOHienTai.getText());
             user.setThon(thonNoiOHienTai.getText());
             user.setNgheNghiep(ngheNghiep.getText());

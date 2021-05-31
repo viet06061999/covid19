@@ -18,7 +18,7 @@
             <TableColumn fx:id="hinhThucLayMau" prefWidth="75.0" text="Hình thức lấy mẫu*" />
             <TableColumn fx:id="maThuTu" prefWidth="75.0" text="Mã thứ tự" />
             <TableColumn fx:id="hoVaTen" prefWidth="75.0" text="Họ và tên" />
-            <TableColumn fx:id="xaNoiOHienTai" prefWidth="75.0" text="Xã (nơi ở hiện tại)"  />
+            <TableColumn prefWidth="75.0" text="Xã (nơi ở hiện tại)" fx:id="xaNoiOHienTai" />
             <TableColumn fx:id="thonNoiOHienTai" prefWidth="75.0" text="Thôn (nơi ở hiện tại" />
             <TableColumn fx:id="ngheNghiep" prefWidth="75.0" text="Nghề nghiệp" />
             <TableColumn fx:id="noiLamViecHocTap" prefWidth="75.0" text="Nơi làm việc, học tập" />
@@ -28,7 +28,7 @@
             <TableColumn fx:id="phanLoaiNoiLayMau" prefWidth="75.0" text="Phân loại nơi lấy mẫu" />
             <TableColumn fx:id="diaDiemNoiLayMau" prefWidth="75.0" text="Địa điểm nơi lấy mẫu" />
             <TableColumn fx:id="huyenNoiLayMau" prefWidth="75.0" text="Huyện (nơi lấy mẫu)" />
-            <TableColumn fx:id="xaNoiLayMau" prefWidth="75.0" text="Xã (nơi lấy mẫu)" />
+            <TableColumn prefWidth="75.0" text="Xã (nơi lấy mẫu)" fx:id="xaNoiLayMau" />
             <TableColumn fx:id="thonNoiLayMau" prefWidth="75.0" text="Thôn (nơi lấy mẫu)" />
             <TableColumn fx:id="loaiMau" prefWidth="75.0" text="Loại mẫu" />
             <TableColumn fx:id="donViLayMau" prefWidth="75.0" text="Đơn vị lấy mẫu" />
@@ -46,6 +46,8 @@
         </columns>
       </TableView>
       <Button layoutX="516.0" layoutY="78.0" mnemonicParsing="false" onAction="#xuatExcelAction" prefHeight="25.0" text="Xuất excel" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="60.0" fx:id="xuatExcel" />
+       <Button fx:id="nhapExcel" layoutX="336.0" layoutY="56.0" mnemonicParsing="false" onAction="#nhapExcelAction" prefHeight="25.0" text="Nhập từ excel" AnchorPane.rightAnchor="174.0" AnchorPane.topAnchor="60.0" />
+
    </children>
    <padding>
       <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
