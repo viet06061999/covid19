@@ -120,6 +120,10 @@ public class EditController {
         maMauBenhPham.setText(user.getMaMauBenhPham());
         hinhThucLayMau.setText(user.getHinhThucLayMau());
         hoVaTen.setText(user.getHoTen());
+        namSinh.setText(user.getNamSinh());
+        gioiTinh.setText(user.getGioiTinh());
+        sdt.setText(user.getSdt());
+        huyenNoiOHienTai.setText(user.getHuyen());
 
         xaNoiOHienTai.setText(user.getXa());
         thonNoiOHienTai.setText(user.getThon());
@@ -130,6 +134,7 @@ public class EditController {
         ghiChuNeuCoTruongHopDacBiet.setText(user.getGhiChu());
         phanLoaiNoiLayMau.setText(user.getPhanLoaiNoiLayMau());
 
+        diaDiemNoiLayMau.setText(user.getDiaDiemNoiLaymau());
         huyenNoiLayMau.setText(user.getHuyenLayMau());
         xaNoiLayMau.setText(user.getXaLayMau());
         thonNoiLayMau.setText(user.getThonLayMau());

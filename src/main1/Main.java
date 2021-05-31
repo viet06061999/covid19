@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Covid 19");
+        primaryStage.setTitle("Phần mềm quản lý và theo dõi Covid19 - Bắc Giang - Tác giả: Nguyễn Đại Lượng");
         primaryStage.setScene(new Scene(root));
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();

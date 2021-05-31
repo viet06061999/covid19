@@ -160,16 +160,16 @@ public class ExelUtil {
             user.setThonLayMau(rowData.get(22));
             user.setLoaiMau(rowData.get(23));
             user.setDonViLayMau(rowData.get(24));
-            user.setMaNguoiDuocLayMau(rowData.get(26));
-            user.setNgayLayMau(rowData.get(27));
-            user.setLoaiGop(rowData.get(29));
-            user.setNgayXetNghiem(rowData.get(30));
-            user.setPhuongPhapXetNghiem(rowData.get(31));
-            user.setKetQuaXetNghiem(rowData.get(32));
-            user.setDonViGuiMau(rowData.get(33));
-            user.setTinhTrangMau(rowData.get(34));
-            user.setKetQuaXetNghiem(rowData.get(35));
-            user.setCtValue(rowData.get(36));
+            user.setMaNguoiDuocLayMau(rowData.get(25));
+            user.setNgayLayMau(rowData.get(26));
+            user.setLoaiGop(rowData.get(27));
+            user.setNgayXetNghiem(rowData.get(28));
+            user.setPhuongPhapXetNghiem(rowData.get(29));
+            user.setNgayTraKetQua(rowData.get(30));
+            user.setDonViGuiMau(rowData.get(31));
+            user.setTinhTrangMau(rowData.get(32));
+            user.setKetQuaXetNghiem(rowData.get(33));
+            user.setCtValue(rowData.get(34));
             UserDAO.getInstance().saveUser(user);
         }
     }

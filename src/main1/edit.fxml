@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TextField fx:id="maDonVi" promptText="Nhập Mã Đơn vị" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="0.0" />
       <TextField fx:id="maNgay" promptText="Nhập Mã ngày" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="35.0" />
@@ -76,7 +76,7 @@
       <TextField fx:id="ngayTraKetQuaXetNghiem" layoutX="210.0" layoutY="10.0" promptText="Nhập Ngày trả KQXN" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="385.0" />
       <Label text="Ngày xét nghiệm" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="315.0" />
       <Label layoutX="10.0" layoutY="10.0" text="Phương pháp xét nghiệm" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="350.0" />
-      <Label layoutX="20.0" layoutY="20.0" text="Nhập Ngày trả KQXN" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="385.0" />
+      <Label layoutX="20.0" layoutY="20.0" text="Ngày trả KQXN" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="385.0" />
 
       <TextField fx:id="donViGuiMau" promptText="Nhập Đơn vị gửi mẫu" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="420.0" />
       <TextField fx:id="tinhTrangMau" promptText="Nhập Tình trạng mẫu" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="455.0" />

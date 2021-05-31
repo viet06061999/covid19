@@ -123,7 +123,7 @@ public class Controller implements Initializable {
         ngheNghiep.setCellValueFactory(new PropertyValueFactory<User, String>("noiLamViec"));
         noiLamViecHocTap.setCellValueFactory(new PropertyValueFactory<User, String>("noiLamViec"));
         doiTuongLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("doiTuongLayMau"));
-        lanLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("lanLayau"));
+        lanLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("lanLaymau"));
         ghiChuNeuCoTruongHopDacBiet.setCellValueFactory(new PropertyValueFactory<User, String>("ghiChu"));
         phanLoaiNoiLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("phanLoaiNoiLayMau"));
         diaDiemNoiLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("diaDiemNoiLaymau"));
@@ -133,6 +133,7 @@ public class Controller implements Initializable {
         loaiMau.setCellValueFactory(new PropertyValueFactory<User, String>("loaiMau"));
         donViLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("donViLayMau"));
         maNguoiDuocLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("maNguoiDuocLayMau"));
+        loaiGop.setCellValueFactory(new PropertyValueFactory<User, String>("loaiGop"));
         ngayLayMau.setCellValueFactory(new PropertyValueFactory<User, String>("ngayLayMau"));
         ngayXetNghiem.setCellValueFactory(new PropertyValueFactory<User, String>("ngayXetNghiem"));
         phuongPhapXetNghiem.setCellValueFactory(new PropertyValueFactory<User, String>("phuongPhapXetNghiem"));

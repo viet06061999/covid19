@@ -24,7 +24,14 @@ public class InputController {
     TextField hinhThucLayMau;
     @FXML
     TextField hoVaTen;
-
+    @FXML
+    TextField namSinh;
+    @FXML
+    TextField gioiTinh;
+    @FXML
+    TextField sdt;
+    @FXML
+    TextField huyenNoiOHienTai;
     @FXML
     TextField xaNoiOHienTai;
     @FXML
@@ -73,15 +80,6 @@ public class InputController {
     TextField ketQuaXetNghiem;
     @FXML
     TextField ctValue;
-
-    @FXML
-    TextField namSinh;
-    @FXML
-    TextField gioiTinh;
-    @FXML
-    TextField sdt;
-    @FXML
-    TextField huyenNoiOHienTai;
 
     public void luuAction(ActionEvent event) {
         try {
