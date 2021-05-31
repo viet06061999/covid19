@@ -3,7 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/Covid19_jar</output-path>
     <root id="archive" name="Covid19.jar">
       <element id="module-output" name="Covid19" />
-<<<<<<< HEAD
+
       <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-11.0.2/lib/src.zip" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-11.0.2/lib/javafx-swt.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-11.0.2/lib/javafx.web.jar" path-in-jar="/" />
@@ -14,12 +14,12 @@
       <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-11.0.2/lib/javafx.controls.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-11.0.2/lib/javafx.graphics.jar" path-in-jar="/" />
       <element id="library" level="project" name="javafx-sdk-11.0" />
-=======
+
       <element id="extracted-dir" path="$USER_HOME$/Downloads/gembox-spreadsheet.jar" path-in-jar="/" />
       <element id="library" level="project" name="gembox-spreadsheet" />
       <element id="library" level="project" name="json-simple-1.1.1" />
       <element id="library" level="project" name="gson-2.8.7" />
->>>>>>> master
+
     </root>
   </artifact>
 </component>
