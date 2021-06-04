@@ -48,8 +48,6 @@
       <Label layoutX="10.0" layoutY="10.0" text="Ghi chú" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="560.0" />
       <Label layoutX="20.0" layoutY="20.0" text="Phân loại nơi lấy mẫu" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="595.0" />
 
-
-
       <TextField fx:id="diaDiemNoiLayMau" promptText="Nhập Địa điểm nơi lấy mẫu" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="0.0" />
       <TextField fx:id="huyenNoiLayMau" promptText="Nhập Huyện (nơi lấy mẫu)" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="35.0" />
       <TextField layoutX="210.0" layoutY="10.0" promptText="Nhập Xã (nơi lấy mẫu)" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="70.0" fx:id="xaNoiLayMau" />
