@@ -33,85 +33,44 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-
-    @FXML
-    Button themDuLieu;
-
-    @FXML
-    TableView<User> myTableView;
-
-    @FXML
-    TableColumn<User, String> maDonVi;
-    @FXML
-    TableColumn<User, String> maNgay;
-    @FXML
-    TableColumn<User, String> maBan;
-    @FXML
-    TableColumn<User, String> maMauBenhPham;
-    @FXML
-    TableColumn<User, String> hinhThucLayMau;
-    @FXML
-    TableColumn<User, Integer> maThuTu;
-    @FXML
-    TableColumn<User, String> hoVaTen;
-    @FXML
-    TableColumn<User, String> xaNoiOHienTai;
-    @FXML
-    TableColumn<User, String> thonNoiOHienTai;
-    @FXML
-    TableColumn<User, String> ngheNghiep;
-    @FXML
-    TableColumn<User, String> noiLamViecHocTap;
-    @FXML
-    TableColumn<User, String> doiTuongLayMau;
-    @FXML
-    TableColumn<User, String> lanLayMau;
-    @FXML
-    TableColumn<User, String> ghiChuNeuCoTruongHopDacBiet;
-    @FXML
-    TableColumn<User, String> phanLoaiNoiLayMau;
-    @FXML
-    TableColumn<User, String> diaDiemNoiLayMau;
-    @FXML
-    TableColumn<User, String> huyenNoiLayMau;
-    @FXML
-    TableColumn<User, String> xaNoiLayMau;
-    @FXML
-    TableColumn<User, String> thonNoiLayMau;
-    @FXML
-    TableColumn<User, String> loaiMau;
-    @FXML
-    TableColumn<User, String> donViLayMau;
-    @FXML
-    TableColumn<User, String> maNguoiDuocLayMau;
-    @FXML
-    TableColumn<User, String> ngayLayMau;
-    @FXML
-    TableColumn<User, String> loaiGop;
-    @FXML
-    TableColumn<User, String> ngayXetNghiem;
-    @FXML
-    TableColumn<User, String> phuongPhapXetNghiem;
-    @FXML
-    TableColumn<User, String> ngayTraKetQuaXetNghiem;
-    @FXML
-    TableColumn<User, String> donViGuiMau;
-    @FXML
-    TableColumn<User, String> tinhTrangMau;
-    @FXML
-    TableColumn<User, String> ketQuaXetNghiem;
-    @FXML
-    TableColumn<User, String> ctValue;
-
-    @FXML
-    TextField timKiemTextField;
-
-    @FXML
-    Button timKiem;
+    @FXML Button themDuLieu;
+    @FXML TableView<User> myTableView;
+    @FXML TableColumn<User, String> maDonVi;
+    @FXML TableColumn<User, String> maNgay;
+    @FXML TableColumn<User, String> maBan;
+    @FXML TableColumn<User, String> maMauBenhPham;
+    @FXML TableColumn<User, String> hinhThucLayMau;
+    @FXML TableColumn<User, Integer> maThuTu;
+    @FXML TableColumn<User, String> hoVaTen;
+    @FXML TableColumn<User, String> xaNoiOHienTai;
+    @FXML TableColumn<User, String> thonNoiOHienTai;
+    @FXML TableColumn<User, String> ngheNghiep;
+    @FXML TableColumn<User, String> noiLamViecHocTap;
+    @FXML TableColumn<User, String> doiTuongLayMau;
+    @FXML TableColumn<User, String> lanLayMau;
+    @FXML TableColumn<User, String> ghiChuNeuCoTruongHopDacBiet;
+    @FXML TableColumn<User, String> phanLoaiNoiLayMau;
+    @FXML TableColumn<User, String> diaDiemNoiLayMau;
+    @FXML TableColumn<User, String> huyenNoiLayMau;
+    @FXML TableColumn<User, String> xaNoiLayMau;
+    @FXML TableColumn<User, String> thonNoiLayMau;
+    @FXML TableColumn<User, String> loaiMau;
+    @FXML TableColumn<User, String> donViLayMau;
+    @FXML TableColumn<User, String> maNguoiDuocLayMau;
+    @FXML TableColumn<User, String> ngayLayMau;
+    @FXML TableColumn<User, String> loaiGop;
+    @FXML TableColumn<User, String> ngayXetNghiem;
+    @FXML TableColumn<User, String> phuongPhapXetNghiem;
+    @FXML TableColumn<User, String> ngayTraKetQuaXetNghiem;
+    @FXML TableColumn<User, String> donViGuiMau;
+    @FXML TableColumn<User, String> tinhTrangMau;
+    @FXML TableColumn<User, String> ketQuaXetNghiem;
+    @FXML TableColumn<User, String> ctValue;
+    @FXML TextField timKiemTextField;
+    @FXML Button timKiem;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Commit cho vui hahahah
         maDonVi.setCellValueFactory(new PropertyValueFactory<User, String>("maDonVi"));
         maNgay.setCellValueFactory(new PropertyValueFactory<User, String>("maNgay"));
         maBan.setCellValueFactory(new PropertyValueFactory<User, String>("maBan"));
@@ -165,7 +124,6 @@ public class Controller implements Initializable {
                         });
                         MenuItem removeItem = new MenuItem("Xóa");
                         removeItem.setOnAction(new EventHandler<ActionEvent>() {
-
                             @Override
                             public void handle(ActionEvent event) {
                                 UserDAO.getInstance().deleteUser(row.getItem().getStt());
@@ -223,7 +181,7 @@ public class Controller implements Initializable {
             stage.setTitle("Nhập dữ liệu");
             Screen screen = Screen.getPrimary();
             Rectangle2D bounds = screen.getVisualBounds();
-            stage.setWidth(bounds.getWidth() /1.3);
+            stage.setWidth(bounds.getWidth() / 1.3);
             stage.setHeight(bounds.getHeight());
             stage.show();
         } catch (IOException e) {

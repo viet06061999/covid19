@@ -11,75 +11,40 @@ import main1.dao.user.UserDAO;
 import main1.entity.db.User;
 
 public class InputController {
-
-    @FXML
-    TextField maDonVi;
-    @FXML
-    TextField maNgay;
-    @FXML
-    TextField maBan;
-    @FXML
-    TextField maMauBenhPham;
-    @FXML
-    TextField hinhThucLayMau;
-    @FXML
-    TextField hoVaTen;
-    @FXML
-    TextField namSinh;
-    @FXML
-    TextField gioiTinh;
-    @FXML
-    TextField sdt;
-    @FXML
-    TextField huyenNoiOHienTai;
-    @FXML
-    TextField xaNoiOHienTai;
-    @FXML
-    TextField thonNoiOHienTai;
-    @FXML
-    TextField ngheNghiep;
-    @FXML
-    TextField noiLamViecHocTap;
-    @FXML
-    TextField doiTuongLayMau;
-    @FXML
-    TextField lanLayMau;
-    @FXML
-    TextField ghiChuNeuCoTruongHopDacBiet;
-    @FXML
-    TextField phanLoaiNoiLayMau;
-    @FXML
-    TextField diaDiemNoiLayMau;
-    @FXML
-    TextField huyenNoiLayMau;
-    @FXML
-    TextField xaNoiLayMau;
-    @FXML
-    TextField thonNoiLayMau;
-    @FXML
-    TextField loaiMau;
-    @FXML
-    TextField donViLayMau;
-    @FXML
-    TextField maNguoiDuocLayMau;
-    @FXML
-    TextField ngayLayMau;
-    @FXML
-    TextField loaiGop;
-    @FXML
-    TextField ngayXetNghiem;
-    @FXML
-    TextField phuongPhapXetNghiem;
-    @FXML
-    TextField ngayTraKetQuaXetNghiem;
-    @FXML
-    TextField donViGuiMau;
-    @FXML
-    TextField tinhTrangMau;
-    @FXML
-    TextField ketQuaXetNghiem;
-    @FXML
-    TextField ctValue;
+    @FXML TextField maDonVi;
+    @FXML TextField maNgay;
+    @FXML TextField maBan;
+    @FXML TextField maMauBenhPham;
+    @FXML TextField hinhThucLayMau;
+    @FXML TextField hoVaTen;
+    @FXML TextField namSinh;
+    @FXML TextField gioiTinh;
+    @FXML TextField sdt;
+    @FXML TextField huyenNoiOHienTai;
+    @FXML TextField xaNoiOHienTai;
+    @FXML TextField thonNoiOHienTai;
+    @FXML TextField ngheNghiep;
+    @FXML TextField noiLamViecHocTap;
+    @FXML TextField doiTuongLayMau;
+    @FXML TextField lanLayMau;
+    @FXML TextField ghiChuNeuCoTruongHopDacBiet;
+    @FXML TextField phanLoaiNoiLayMau;
+    @FXML TextField diaDiemNoiLayMau;
+    @FXML TextField huyenNoiLayMau;
+    @FXML TextField xaNoiLayMau;
+    @FXML TextField thonNoiLayMau;
+    @FXML TextField loaiMau;
+    @FXML TextField donViLayMau;
+    @FXML TextField maNguoiDuocLayMau;
+    @FXML TextField ngayLayMau;
+    @FXML TextField loaiGop;
+    @FXML TextField ngayXetNghiem;
+    @FXML TextField phuongPhapXetNghiem;
+    @FXML TextField ngayTraKetQuaXetNghiem;
+    @FXML TextField donViGuiMau;
+    @FXML TextField tinhTrangMau;
+    @FXML TextField ketQuaXetNghiem;
+    @FXML TextField ctValue;
 
     public void luuAction(ActionEvent event) {
         try {

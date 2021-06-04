@@ -1,12 +1,14 @@
 <component name="ArtifactManager">
-    <artifact type="jar" name="Covid19:jar">
-        <output-path>$PROJECT_DIR$/out/artifacts/Covid19_jar</output-path>
-        <root id="archive" name="Covid19.jar">
-            <element id="module-output" name="Covid19" />
-            <element id="extracted-dir" path="$USER_HOME$/Downloads/gembox-spreadsheet.jar" path-in-jar="/" />
-            <element id="library" level="project" name="gembox-spreadsheet" />
-            <element id="library" level="project" name="json-simple-1.1.1" />
-            <element id="library" level="project" name="gson-2.8.7" />
-        </root>
-    </artifact>
+  <artifact type="jar" name="Covid19:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Covid19_jar</output-path>
+    <root id="archive" name="Covid19.jar">
+      <element id="module-output" name="Covid19" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/gembox-spreadsheet.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/json-simple-1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/gson-2.3.1.jar" path-in-jar="/" />
+      <element id="library" level="project" name="gembox-spreadsheet" />
+      <element id="library" level="project" name="json-simple-1.1.1" />
+      <element id="library" level="project" name="gson-2.8.7" />
+    </root>
+  </artifact>
 </component>
